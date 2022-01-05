@@ -24,7 +24,7 @@ net = build_model(args)
 teset, teloader = prepare_test_data(args)
 
 print(f'Resuming from {args.resume}...')
-ckpt = torch.load('{args.resume}/ckpt.pth')
+ckpt = torch.load(f'{args.resume}/ckpt.pth')
 net.load_state_dict(ckpt['state_dict'])
 cls_initial, _, _ = test(teloader, net, args.corruption, verbose=True)
 

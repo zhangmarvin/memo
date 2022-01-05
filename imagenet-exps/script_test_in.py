@@ -3,7 +3,7 @@ import argparse
 from subprocess import call
 
 
-parser = argparser.ArgumentParser()
+parser = argparse.ArgumentParser()
 parser.add_argument('--experiment', default='imageneta')
 parser.add_argument('--resume', default='rn50')
 args = parser.parse_args()

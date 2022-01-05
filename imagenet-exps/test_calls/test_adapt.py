@@ -34,7 +34,7 @@ net = build_model(args)
 teset, _ = prepare_test_data(args, use_transforms=False)
 
 print(f'Resuming from {args.resume}...')
-ckpt = torch.load('{args.resume}/ckpt.pth')
+ckpt = torch.load(f'{args.resume}/ckpt.pth')
 
 def marginal_entropy(outputs):
     logits = outputs - outputs.logsumexp(dim=-1, keepdim=True)
