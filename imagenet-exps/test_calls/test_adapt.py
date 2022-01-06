@@ -57,4 +57,4 @@ for i in tqdm(range(len(teset))):
                  args.corruption, args.niter, args.batch_size, args.prior_strength)
     correct.append(test_single(net, image, label, args.corruption, args.prior_strength)[0])
 
-print('MEMO adapt test error {(1-np.mean(correct))*100:.2f}')
+print(f'MEMO adapt test error {(1-np.mean(correct))*100:.2f}')
