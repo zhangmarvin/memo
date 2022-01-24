@@ -1,7 +1,7 @@
 # MEMO: Test Time Robustness via Adaptation and Augmentation
 
 These directories contain code for reproducing the MEMO results for the CIFAR-10
-and ImageNet test sets, as well as CSV files with full results for ImageNet-C.
+and ImageNet distribution shift test sets.
 
 _Please note:_ this code has been modified from the version that generated the
 results in the paper for the purpose of cleaning the code. Though it is likely
@@ -92,12 +92,7 @@ Please use the following citation:
 }
 ```
 
-The current most up to date paper, under review at ICLR 2022, can be found
-[here](https://openreview.net/pdf?id=J1uOGgf-bP). This submission version has a
-different title and method name.
-
-The permanent arXiv link is [here](https://arxiv.org/abs/2110.09506). This
-version will be updated after the ICLR review cycle is completed.
+The paper can be found on arXiv [here](https://arxiv.org/abs/2110.09506).
 
 
 ## Acknowledgments
