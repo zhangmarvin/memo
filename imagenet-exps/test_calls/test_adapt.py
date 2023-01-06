@@ -52,7 +52,7 @@ print('Running...')
 correct = []
 for i in tqdm(range(len(teset))):
     net.load_state_dict(ckpt['state_dict'])
-    image, label = teset[i-1]
+    image, label = teset[i]
     adapt_single(net, image, optimizer, marginal_entropy,
                  args.corruption, args.niter, args.batch_size, args.prior_strength)
     correct.append(test_single(net, image, label, args.corruption, args.prior_strength)[0])
