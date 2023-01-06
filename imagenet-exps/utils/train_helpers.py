@@ -50,11 +50,10 @@ def build_model(args):
         net = models.resnet50().cuda()
     net = torch.nn.DataParallel(net)
 
-    if hasattr(args, 'adapt_prior_strength') or hasattr(args, 'test_prior_strength'):
-        if ((not args.adapt_prior_strength is None and args.adapt_prior_strength >= 0) or
-            (not args.test_prior_strength is None and args.test_prior_strength >= 0)):
+    if hasattr(args, 'prior_strength'):
+        if (not args.prior_strength is None and args.prior_strength >= 0):
             print('modifying BN forward pass')
-            nn.BatchNorm2d.prior = None
+            nn.BatchNorm2d.prior = float(args.prior_strength) / float(args.prior_strength + 1)
             nn.BatchNorm2d.forward = _modified_bn_forward
     return net
 
